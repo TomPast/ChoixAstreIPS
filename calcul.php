@@ -4,6 +4,10 @@
     $JSONResult = array();
 
     $query = "SELECT * FROM astre_ips";
+    $nb_ips = 0;
+    $nb_astre = 0;
+
+
     $resultUsers = $mysqli->query($query);
     while($result = $resultUsers -> fetch_row()){
         $score = 0;
@@ -21,7 +25,6 @@
         //Association ENSIMElec
         if(strpos($result[5], 'ENSIM\'Elec')!== false){
             $score += -3;
-            
         }
 
         //Association Trublions du plateau
@@ -187,10 +190,14 @@
                 break;   
         }
 
-        
+        if($score >0){
+            $nb_ips++;
+        }else{
+            $nb_astre++;
+        }
         echo $score;
         echo "<br>";
     }
-
-
+    echo "<br>";
+    echo "IPS : ".$nb_ips." |ASTRE : ".$nb_astre;
 ?>
