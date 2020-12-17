@@ -3,9 +3,11 @@
 
     $JSONResult = array();
 
-    $query = "SELECT * FROM 'astre_ips'";
+    $query = "SELECT * FROM astre_ips";
     $resultUsers = $mysqli->query($query);
     while($result = $resultUsers -> fetch_row()){
-        console.log($result[0]);
+        print_r($result[0]);
     }
+
+
 ?>
