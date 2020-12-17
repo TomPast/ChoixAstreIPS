@@ -42,7 +42,6 @@
         //Conservatoire ou musique
         if(strpos($result[8], 'musique')!== false || strpos($result[8], 'Conservatoire')!== false){
             $score += 2;
-
         }
         
         //Navigateur
@@ -192,95 +191,110 @@
                 break;   
         }
 
+        
+        //jeu video = 22
+        $poids = 1;
+        switch ($result[23]) {
+            case "Tout le temps":
+            $score = $score + (2*$poids);
+            break;
+            case "Régulièrement":
+            $score = $score + (1*$poids);
+            break;
+            case "Un peu":
+            $score = $score + (0.5*$poids);
+            break;
+            default:
+            break;
+        }
+
+        //logo = 19
+        $poids = 1;
+        switch ($result[20]) {
+            case "Tout le temps":
+            $score = $score + (2*$poids);
+            break;
+            case "Régulièrement":
+            $score = $score + (1*$poids);
+            break;
+            case "Un peu":
+            $score = $score + (0.5*$poids);
+            break;
+            default:
+            break;
+        }
+
+        //robot = 20
+        $poids = -3;
+        switch ($result[21]) {
+        case "Tout le temps":
+            $score = $score + (2*$poids);
+            break;
+        case "Régulièrement":
+            $score = $score + (1*$poids);
+            break;
+        case "Un peu":
+            $score = $score + (0.5*$poids);
+            break;
+        default:
+            break;
+        }
+
+        //appli mobile = colonne 21
+        $poids = 3;
+        switch ($result[22]) {
+        case "Tout le temps":
+            $score = $score + (2*$poids);
+            break;
+        case "Régulièrement":
+            $score = $score + (1*$poids);
+            break;
+        case "Un peu":
+            $score = $score + (0.5*$poids);
+            break;
+        default:
+            break;
+        }
+
+        //systeme electronique = colonne 24
+        $poids = -3;
+        switch ($result[25]) {
+        case "Tout le temps":
+            $score = $score + (2*$poids);
+            break;
+        case "Régulièrement":
+            $score = $score + (1*$poids);
+            break;
+        case "Un peu":
+            $score = $score + (0.5*$poids);
+            break;
+        default:
+            break;
+        }
+
         if($score >0){
             $nb_ips++;
-        }else{
+        }else if ($score <0){
             $nb_astre++;
         }
+
+        // Linux + Windows
+        if(($result[14]=="Tout le temps" || $result[14]=="Régulièrement") && ($result[16]=="Tout le temps" || $result[16]=="Régulièrement")){
+            $score+= -4;
+        }
+        // Mac + Windows
+        if(($result[15]=="Tout le temps" || $result[15]=="Régulièrement") && ($result[16]=="Tout le temps" ||  $result[16]=="Régulièrement")){
+            $score+= 5;
+        }
+        // Apple + Mac
+        if(($result[6]=="Apple") && ($result[16]=="Tout le temps" || $result[16]=="Régulièrement")){
+            $score+= 3;
+        }
+
         echo $score;
         echo "<br>";
     }
     echo "<br>";
     echo "IPS : ".$nb_ips." |ASTRE : ".$nb_astre;
-  //jeu video = 22
-  $poids = 1;
-  switch ($result[22]) {
-    case "Tout le temps":
-      $score = $score + (2*$poids);
-      break;
-    case "Régulièrement":
-      $score = $score + (1*$poids);
-      break;
-    case "Un peu":
-      $score = $score + (0.5*$poids);
-      break;
-    default:
-      break;
-  }
-
-  //logo = 19
-  $poids = 1;
-  switch ($result[19]) {
-    case "Tout le temps":
-      $score = $score + (2*$poids);
-      break;
-    case "Régulièrement":
-      $score = $score + (1*$poids);
-      break;
-    case "Un peu":
-      $score = $score + (0.5*$poids);
-      break;
-    default:
-      break;
-}
-
-//robot = 20
-$poids = -3;
-switch ($result[20]) {
-  case "Tout le temps":
-    $score = $score + (2*$poids);
-    break;
-  case "Régulièrement":
-    $score = $score + (1*$poids);
-    break;
-  case "Un peu":
-    $score = $score + (0.5*$poids);
-    break;
-  default:
-    break;
-}
-
-//appli mobile = colonne 21
-$poids = 3;
-switch ($result[21]) {
-  case "Tout le temps":
-    $score = $score + (2*$poids);
-    break;
-  case "Régulièrement":
-    $score = $score + (1*$poids);
-    break;
-  case "Un peu":
-    $score = $score + (0.5*$poids);
-    break;
-  default:
-    break;
-}
-
-//systeme electronique = colonne 24
-$poids = -3;
-switch ($result[24]) {
-  case "Tout le temps":
-    $score = $score + (2*$poids);
-    break;
-  case "Régulièrement":
-    $score = $score + (1*$poids);
-    break;
-  case "Un peu":
-    $score = $score + (0.5*$poids);
-    break;
-  default:
-    break;
-}
-}
-
+  
 ?>
