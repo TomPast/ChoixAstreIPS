@@ -1,4 +1,4 @@
-function render(nb_ips, nb_astre, nb_neutre){
+function renderProportion(nb_ips, nb_astre, nb_neutre){
     Highcharts.chart('container', {
 
         chart: {

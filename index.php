@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Choix Astre IPS</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/item-series.js"></script>
@@ -85,8 +85,8 @@
 
         <div class="form-group col-4 col-md-2 mx-2 text-center">
             <label for="formControlRange">Arduino</label>
-            <input type="range" class="form-control-range"  name="indArduino" id="indArduino" min="-15" max="15" value="-2" onchange="update()" oninput="indArduinoOut.value = indArduino.value">
-            <output name="indArduinoOut" id="indArduinoOut">-2</output>
+            <input type="range" class="form-control-range"  name="indArduino" id="indArduino" min="-15" max="15" value="-3" onchange="update()" oninput="indArduinoOut.value = indArduino.value">
+            <output name="indArduinoOut" id="indArduinoOut">-3</output>
         </div>
 
         <div class="form-group col-4 col-md-2 mx-2 text-center">
@@ -157,8 +157,8 @@
 
         <div class="form-group col-4 col-md-2 mx-2 text-center">
             <label for="formControlRange">Robot</label>
-            <input type="range" class="form-control-range"  name="indRobot" id="indRobot" min="-15" max="15" value="-3" onchange="update()" oninput="indRobotOut.value = indRobot.value">
-            <output name="indRobotOut" id="indRobotOut">-3</output>
+            <input type="range" class="form-control-range"  name="indRobot" id="indRobot" min="-15" max="15" value="-6" onchange="update()" oninput="indRobotOut.value = indRobot.value">
+            <output name="indRobotOut" id="indRobotOut">-6</output>
         </div>
 
         <div class="form-group col-4 col-md-2 mx-2 text-center">
@@ -169,8 +169,8 @@
 
         <div class="form-group col-4 col-md-2 mx-2 text-center">
             <label for="formControlRange">Système électronique</label>
-            <input type="range" class="form-control-range"  name="indSE" id="indSE" min="-15" max="15" value="-4" onchange="update()" oninput="indSEOut.value = indSE.value">
-            <output name="indSEOut" id="indSEOut">-4</output>
+            <input type="range" class="form-control-range"  name="indSE" id="indSE" min="-15" max="15" value="-7" onchange="update()" oninput="indSEOut.value = indSE.value">
+            <output name="indSEOut" id="indSEOut">-7</output>
         </div>
 
         <div class="form-group col-4 col-md-2 mx-2 text-center">
@@ -197,10 +197,16 @@
 
     </figure>
     
+    <figure class="highcharts-figure">
+        <div id="container2" style="height: 900px; "></div>
+
+    </figure>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <script src="js/DetailChart.js"></script>
     <script src="js/ProportionChart.js"></script>
     <script src="js/calc.js"></script>
 </body>

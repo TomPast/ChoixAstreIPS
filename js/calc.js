@@ -1,5 +1,6 @@
 function update(){
     var poids = [];
+    //Récupération des poids
     poids.push(+document.getElementById('indPrepa').value);
     poids.push(+document.getElementById('indTOEIC').value);
     poids.push(+document.getElementById('indEnsimelec').value);
@@ -33,13 +34,18 @@ function update(){
     poids.push(+document.getElementById('indMacWind').value);
     poids.push(+document.getElementById('indAppleMac').value);
 
-    //For each etudiant (liste de poids)
+    //Calcul des score pour chacun des étudiants et actualisation des deux charts
     var result = [];
-
-    
+    var result_ips = new Array(Object.keys(coeffs).length).fill(0);
+    var result_astre = new Array(Object.keys(coeffs).length).fill(0);
     let nb_ips = 0;
     let nb_astre = 0;
     let nb_neutre = 0;
+
+
+    let max_ips = 0;
+    let max_astre = 0;
+    let nb_ligne = 0;
     Object.keys(coeffs).forEach(user =>{
         let score = 0;
         for (let i = 0; i < 28; i++) {
@@ -48,8 +54,10 @@ function update(){
         
         if(score > 0){
             nb_ips++;
+            result_ips[nb_ligne] = score;
         }else if(score <0){
             nb_astre++;
+            result_astre[nb_ligne] = score;
         }else{
             nb_neutre++;
         }
@@ -57,10 +65,12 @@ function update(){
             name : user,
             data : score
         })
+        nb_ligne++;
     })
-
+    
     console.log('nb ips '+nb_ips);
-    render(nb_ips, nb_astre, nb_neutre);
+    renderProportion(nb_ips, nb_astre, nb_neutre);
+    renderDetail(Object.keys(coeffs),result_ips, result_astre);
 }
 
 update();
