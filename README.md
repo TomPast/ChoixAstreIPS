@@ -1,6 +1,6 @@
 # Choix ASTRE / IPS
 
-Ce projet a été réalisé par  **Manuel Jehanno, Maxime Bizeray et Tom Pastor**. L'objectif du projet est de prédire la spécialité que vont choisir les étudiants de 3A de l'ENSIM en faisant des hypothèse.
+Ce projet a été réalisé par  **Manuel Jehanno, Maxime Bizeray et Tom Pastor**. L'objectif du projet est de prédire la spécialité que vont choisir les étudiants de 3A de l'ENSIM en faisant des hypothèses.
 
 
 
