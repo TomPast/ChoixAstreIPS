@@ -10,3 +10,8 @@ Une live démo est accessible ici : [https://www.tompastor.fr/ChoixAstreIPS/](ht
 
 ## Fonctionnement
 Au chargement de la page, les poids sont ceux que nous avons choisis pour nos hypothèses. On peut ensuite les modifier à l'aide des curseurs, ce qui va modifier les deux graphiques en temps réel. Le premier graphique représente la proportion globale d'Astre / IPS dans la promotion, chaque point représentant un étudiant. Le deuxième graphique montre le détail par étudiant, plus la barre va vers la gauche plus l'étudiant a de chances d'aller en ASTRE, à l'inverse, à droite, en IPS.
+
+## Mode d'emploi
+1. Modifier le fichier connect.php avec vos informations de connexion à votre base de données
+2. Importer le fichier astre_ips.sql dans votre base de données
+3. Lancer la page index.php et visualiser les résultats. Modifier les poids des hypothèses.

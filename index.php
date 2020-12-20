@@ -9,16 +9,15 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/item-series.js"></script>
     <script type="text/javascript">
-        
 		var coeffs = <?php echo json_encode($coeffs);?>;
 	</script>
 </head>
 <body>
     <div class="container">
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-            <h2>Choix ASTRE IPS</h2>
-            <p class="lead">Vous trouverez ci-dessous le résultat de nos hypothèses concernant le choix ASTRE/IPS. Vous pourrez modifier les poids de chaque hypothèse en bougeant les curseurs. Plus la valeur est positive plus la personne a de chance d'aller en IPS, à l'inverse, plus la valeur est négative plus celle-ci a de chances d'aller en ASTRE.</p>
+        
+            <img class="d-block mx-auto mb-4" src="img/logo.svg" alt="" width="300" >
+            <p class="lead">Vous trouverez ci-dessous le résultat de nos hypothèses concernant le choix ASTRE/IPS. Vous pourrez modifier les poids de chaque hypothèse en bougeant les curseurs. Plus la valeur est positive plus la personne aura de chances d'aller en IPS, à l'inverse, plus la valeur est négative plus celle-ci aura de chances d'aller en ASTRE. Pour réinitialiser les poids, rechargez la page.</p>
         </div>
     </div>
    
@@ -202,10 +201,9 @@
 
     </figure>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
     <script src="js/DetailChart.js"></script>
     <script src="js/ProportionChart.js"></script>
     <script src="js/calc.js"></script>

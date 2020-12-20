@@ -21,9 +21,10 @@ function renderProportion(nb_ips, nb_astre, nb_neutre){
             name: 'Nombre d\'étudiants',
             keys: ['name', 'y', 'color', 'label'],
             data: [
-                ['IPS', nb_ips, '#BE3075', 'Nombre d\'IPS'],
-                ['Neutre', nb_neutre, '#0000FF', 'Nombre de personne neutre'],
-                ['ASTRE', nb_astre, '#FFFFF', 'Nombre d\'ASTRE'],
+                ['ASTRE', nb_astre, '#95CEFF', 'Nombre d\'ASTRE'],
+                ['Neutre', nb_neutre, '#990000', 'Nombre de personne neutre'],
+                ['IPS', nb_ips, '#5C5C61', 'Nombre d\'IPS']
+                
              
             ],
             dataLabels: {
