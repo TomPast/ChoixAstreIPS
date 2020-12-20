@@ -1,5 +1,6 @@
 <?php
-    $mysqli= new mysqli("localhost", "root", "", "astreips");
+    include "connect.php";
+    $mysqli= new mysqli($servername, $username, $password, $database);
     $mysqli->query("SET NAMES 'utf8'");
 
 

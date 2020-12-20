@@ -1,6 +1,7 @@
 function update(){
     var poids = [];
-    //Récupération des poids
+
+    //Récupération de tous les poids (par les sliders)
     poids.push(+document.getElementById('indPrepa').value);
     poids.push(+document.getElementById('indTOEIC').value);
     poids.push(+document.getElementById('indEnsimelec').value);
@@ -34,7 +35,7 @@ function update(){
     poids.push(+document.getElementById('indMacWind').value);
     poids.push(+document.getElementById('indAppleMac').value);
 
-    //Calcul des score pour chacun des étudiants et actualisation des deux charts
+    //Calcul des scores pour chacun des étudiants
     var result = [];
     var result_ips = new Array(Object.keys(coeffs).length).fill(0);
     var result_astre = new Array(Object.keys(coeffs).length).fill(0);
@@ -43,8 +44,6 @@ function update(){
     let nb_neutre = 0;
 
 
-    let max_ips = 0;
-    let max_astre = 0;
     let nb_ligne = 0;
     Object.keys(coeffs).forEach(user =>{
         let score = 0;
@@ -67,8 +66,8 @@ function update(){
         })
         nb_ligne++;
     })
-    
-    console.log('nb ips '+nb_ips);
+
+    //Actualisation des graphiques avec les nouveaux résultats
     renderProportion(nb_ips, nb_astre, nb_neutre);
     renderDetail(Object.keys(coeffs),result_ips, result_astre);
 }
